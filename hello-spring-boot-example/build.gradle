@@ -4,13 +4,14 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'com.github.hirakida.spring.boot:hello-spring-boot-starter:0.0.1'
+    implementation "com.github.hirakida.spring.boot:hello-spring-boot-starter:${version}"
 }
 
-build.dependsOn([':hello-spring-boot-starter:publishToMavenLocal',
-                 ':hello-spring-boot-autoconfigure:publishToMavenLocal'])
+compileJava.dependsOn([':hello-spring-boot-starter:publishToMavenLocal',
+                       ':hello-spring-boot-autoconfigure:publishToMavenLocal'])
 
-generateMetadataFileForMavenJavaPublication.enabled = false
-generatePomFileForMavenJavaPublication.enabled = false
-publishMavenJavaPublicationToMavenLocal.enabled = false
+generateMetadataFileForGprPublication.enabled = false
+generatePomFileForGprPublication.enabled = false
+publishGprPublicationToMavenLocal.enabled = false
 publishToMavenLocal.enabled = false
+publishGprPublicationToGitHubPackagesRepository.enabled = false
