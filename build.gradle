@@ -21,7 +21,7 @@ subprojects {
         repositories {
             maven {
                 name = 'GitHubPackages'
-                url = uri('https://maven.pkg.github.com/hirakida/spring-boot-starter-demo')
+                url = uri('https://maven.pkg.github.com/hirakida/hello-spring-boot-starter')
                 credentials {
                     username = project.findProperty('gpr.user') ?: System.getenv('USERNAME')
                     password = project.findProperty('gpr.key') ?: System.getenv('TOKEN')
