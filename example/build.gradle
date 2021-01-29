@@ -1,0 +1,25 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = JavaVersion.VERSION_11
+
+repositories {
+    maven {
+        url = 'https://maven.pkg.github.com/hirakida/hello-spring-boot-starter'
+        credentials {
+            username = 'hirakida'
+            password = System.getenv('GHCR_TOKEN')
+        }
+    }
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'com.github.hirakida.spring.boot:hello-spring-boot-starter:0.1.4'
+}
